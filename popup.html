@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <title>AwayDays</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body class="none">
+  <section class="sky" aria-live="polite">
+    <div class="sun" aria-hidden="true"></div>
+    <div class="scene" id="scene" aria-hidden="true"></div>
+    <div class="hero" id="hero"></div>
+  </section>
+
+  <main>
+    <section id="checklist-section" class="checklist-section" hidden>
+      <div class="cl-head">
+        <h2 id="checklist-title">Before you go</h2>
+        <span id="checklist-progress" class="progress"></span>
+      </div>
+      <div class="bar" aria-hidden="true"><div id="checklist-bar"></div></div>
+      <ul id="checklist" class="checklist"></ul>
+      <form id="item-form" class="item-form">
+        <label for="item-text" class="visually-hidden">New checklist item</label>
+        <input id="item-text" type="text" placeholder="Add your own item" maxlength="60">
+        <button type="submit" class="small-btn">Add</button>
+      </form>
+    </section>
+
+    <h2>Your leave</h2>
+    <ul id="trips" class="trips"></ul>
+
+    <form id="add-form" class="add-form" novalidate>
+      <label for="name">Name</label>
+      <input id="name" type="text" placeholder="e.g. Cornwall trip" maxlength="40">
+      <label for="type">Type of holiday</label>
+      <select id="type"></select>
+      <div class="dates">
+        <div>
+          <label for="start">First day off</label>
+          <input id="start" type="date" required>
+        </div>
+        <div>
+          <label for="end">Last day off</label>
+          <input id="end" type="date" required>
+        </div>
+      </div>
+      <p id="error" class="error" role="alert"></p>
+      <button type="submit">Add leave</button>
+    </form>
+
+    <div class="appearance" role="group" aria-labelledby="appearance-label">
+      <span id="appearance-label">Appearance</span>
+      <div class="seg">
+        <button type="button" data-theme-choice="auto">Auto</button>
+        <button type="button" data-theme-choice="light">Light</button>
+        <button type="button" data-theme-choice="dark">Dark</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
+
+  <script src="holidays.js"></script>
+  <script src="messages.js"></script>
+  <script src="scenes.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
